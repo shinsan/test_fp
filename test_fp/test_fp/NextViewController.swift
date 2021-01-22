@@ -11,17 +11,12 @@ let screenSize: CGSize = CGSize(width: UIScreen.main.bounds.size.width, height: 
 class NextViewController: UIViewController {
     
     let collectionView: UICollectionView = {
-        // セルのレイアウト設計
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
 
-        // 各々の設計に合わせて調整
-        //        layout.scrollDirection = .vertical
-        //        layout.minimumInteritemSpacing = 0
-        //        layout.minimumLineSpacing = 0
 
         let collectionView = UICollectionView( frame: CGRect(x: 0, y: 0, width: screenSize.width, height: screenSize.height ), collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.red
-        // セルの登録
+
         collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
         return collectionView
     }()
@@ -36,18 +31,6 @@ class NextViewController: UIViewController {
             flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 
@@ -66,7 +49,5 @@ extension NextViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
     }
-
 }
